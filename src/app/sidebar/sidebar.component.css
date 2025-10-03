@@ -1,0 +1,38 @@
+@media (min-width: 768px) {
+  .sidebar .offcanvas-lg {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px;
+  }
+  .navbar-search {
+    display: block;
+  }
+}
+
+.sidebar .nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  color: #0d6efd;
+}
+
+.sidebar-heading {
+  font-size: 0.75rem;
+}
+a {
+  cursor: pointer;
+}
+a.inactive,
+a.inactive:link,
+a.inactive:visited,
+a.inactive:hover,
+a.inactive:active,
+a.inactive:focus {
+  color: gray;
+  opacity: 0.6;
+  pointer-events: none; /* blokuje kliknięcie */
+  cursor: default;
+  text-decoration: none;
+}
