@@ -1,0 +1,268 @@
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary"
+    >
+      <app-sidebar />
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <form
+        [formGroup]="dataForm"
+        (ngSubmit)="onSubmit()"
+        class="parameters pt-3 pb-2 mb-3 border-bottom"
+      >
+        <div class="params-wrapper d-flex flex-wrap flex-fill">
+          <div class="s-params flex-fill border-end">
+            <div class="container text-center">
+              <div class="row">
+                <input
+                  type="radio"
+                  id="s1"
+                  name="leadershipStyle"
+                  value="s1"
+                  formControlName="leadershipStyle"
+                  (change)="matchDevelopmentLevel()"
+                />
+                <label class="col btn btn-outline-primary m-1 params" for="s1"
+                  ><span class="label-text">S1 instruowanie</span
+                  ><span class="label-tick"></span
+                ></label>
+                <input
+                  type="radio"
+                  id="s2"
+                  name="leadershipStyle"
+                  value="s2"
+                  formControlName="leadershipStyle"
+                  (change)="matchDevelopmentLevel()"
+                />
+                <label class="col btn btn-outline-primary m-1 params" for="s2"
+                  ><span class="label-text">S2 konsultowanie</span
+                  ><span class="label-tick"></span
+                ></label>
+              </div>
+              <div class="row">
+                <input
+                  type="radio"
+                  id="s3"
+                  name="leadershipStyle"
+                  value="s3"
+                  formControlName="leadershipStyle"
+                  (change)="matchDevelopmentLevel()"
+                />
+                <label class="col btn btn-outline-primary m-1 params" for="s3"
+                  ><span class="label-text">S3 wspieranie</span
+                  ><span class="label-tick"></span
+                ></label>
+                <input
+                  type="radio"
+                  id="s4"
+                  name="leadershipStyle"
+                  value="s4"
+                  formControlName="leadershipStyle"
+                  (change)="matchDevelopmentLevel()"
+                />
+                <label class="col btn btn-outline-primary m-1 params" for="s4"
+                  ><span class="label-text">S4 delegowanie</span
+                  ><span class="label-tick"></span
+                ></label>
+              </div>
+            </div>
+          </div>
+          <div class="d-params flex-fill">
+            <div class="container text-center">
+              <div class="row">
+                <input
+                  type="radio"
+                  id="d1"
+                  name="developmentLevel"
+                  value="d1"
+                  formControlName="developmentLevel"
+                  (change)="validateStyle()"
+                />
+                <label class="col btn btn-outline-secondary m-1 params" for="d1"
+                  ><span class="label-text">D1 debiutant</span
+                  ><span class="label-tick"></span
+                ></label>
+                <input
+                  type="radio"
+                  id="d2"
+                  name="developmentLevel"
+                  value="d2"
+                  formControlName="developmentLevel"
+                  (change)="validateStyle()"
+                />
+                <label class="col btn btn-outline-secondary m-1 params" for="d2"
+                  ><span class="label-text">D2 uczeń</span
+                  ><span class="label-tick"></span
+                ></label>
+              </div>
+              <div class="row">
+                <input
+                  type="radio"
+                  id="d3"
+                  name="developmentLevel"
+                  value="d3"
+                  formControlName="developmentLevel"
+                  (change)="validateStyle()"
+                />
+                <label class="col btn btn-outline-secondary m-1 params" for="d3"
+                  ><span class="label-text">D3 ostrożny</span
+                  ><span class="label-tick"></span
+                ></label>
+                <input
+                  type="radio"
+                  id="d4"
+                  name="developmentLevel"
+                  value="d4"
+                  formControlName="developmentLevel"
+                  (change)="validateStyle()"
+                />
+                <label class="col btn btn-outline-secondary m-1 params" for="d4"
+                  ><span class="label-text">D4 expert</span
+                  ><span class="label-tick"></span
+                ></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="style-alert mt-2">
+          {{ styleAlert() }}
+        </div>
+        <div class="form-floating mt-3">
+          <button type="submit" class="btn submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-send"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+              />
+            </svg>
+          </button>
+          <textarea
+            class="form-control border-secondary"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+            formControlName="userQuery"
+          ></textarea>
+          <label for="floatingTextarea"
+            >Opisz co chesz przekazać pracownikowi, np. zbyt niska (87%)
+            realizacja planu w sprzedaży</label
+          >
+        </div>
+      </form>
+      <div class="response">
+        @if (isLoading()) {
+        <div class="row">
+          <div class="col-12 mt-3 mb-1">
+            <app-status-message
+              [loop]="false"
+              [messages]="loadingMessages"
+              [interval]="2000"
+            >
+            </app-status-message>
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+        </div>
+        } @else if (responseData()) {
+        <h6>Parametry feedbacku</h6>
+        <div class="feedback-info">
+          <ul class="list-group list-group-flush responsive-w75">
+            <li class="list-group-item">
+              <span>Poziom rozwoju pracownika:</span
+              ><span>{{ (responseData()?.metadata)!.development_level }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Wybrany styl liderski:</span
+              ><span
+                [ngClass]="
+                  responseData()!.metadata.applied_style ===
+                  responseData()!.metadata.recommended_style
+                    ? ''
+                    : 'style-alert-color'
+                "
+                >{{ (responseData()?.metadata)!.applied_style }}</span
+              >
+            </li>
+            <li class="list-group-item">
+              <span>Rekomendowany styl liderski:</span
+              ><span>{{ (responseData()?.metadata)!.recommended_style }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Kredyty:</span
+              ><span>{{ (responseData()?.metadata)!.credits }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Opis sytuacji: </span><span>{{ userQuery() }}</span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="feedback-content-header-wrapper d-flex justify-content-between align-items-center w-75 mt-3"
+        >
+          <h6>Propozycja feedbacku</h6>
+          @if (!copied()) {
+          <svg
+            (click)="copyToClipboard()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-copy"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+            />
+          </svg>
+          } @else {
+          <div>
+            <span class="me-1 copied">skopiowane</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-check2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"
+              />
+            </svg>
+          </div>
+          }
+        </div>
+
+        <div class="col-12 mt-3 feedback-content">
+          {{ responseData()?.feedback }}
+        </div>
+        }
+      </div>
+    </main>
+  </div>
+</div>

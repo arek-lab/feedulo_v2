@@ -1,0 +1,391 @@
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary"
+    >
+      <app-sidebar />
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <form
+        [formGroup]="dataForm"
+        (ngSubmit)="onSubmit()"
+        class="parameters pt-3 pb-2 mb-3 border-bottom"
+      >
+        <h6>Wybierz styl, którego potrzebujesz</h6>
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="styles-wrapper">
+            <div class="styles">
+              <div class="row text-center">
+                <div class="col-6 pt-2">
+                  <input
+                    type="radio"
+                    name="styleTone"
+                    formControlName="styleTone"
+                    id="style-tone1"
+                    value="st1"
+                  />
+                  <label for="style-tone1"
+                    ><span class="label-text">{{ labels.tone["st1"] }}</span
+                    ><span class="label-tick"></span
+                  ></label>
+                  <input
+                    type="radio"
+                    name="styleTone"
+                    formControlName="styleTone"
+                    id="style-tone2"
+                    value="st2"
+                  />
+                  <label for="style-tone2"
+                    ><span class="label-text">{{ labels.tone["st2"] }}</span
+                    ><span class="label-tick"></span
+                  ></label>
+                  <input
+                    type="radio"
+                    name="styleTone"
+                    formControlName="styleTone"
+                    id="style-tone3"
+                    value="st3"
+                  />
+                  <label for="style-tone3"
+                    ><span class="label-text">{{ labels.tone["st3"] }}</span
+                    ><span class="label-tick"></span
+                  ></label>
+                  <input
+                    type="radio"
+                    name="styleTone"
+                    formControlName="styleTone"
+                    id="style-tone4"
+                    value="st4"
+                  />
+                  <label for="style-tone4"
+                    ><span class="label-text">{{ labels.tone["st4"] }}</span
+                    ><span class="label-tick"></span
+                  ></label>
+                  <input
+                    type="radio"
+                    name="styleTone"
+                    formControlName="styleTone"
+                    id="style-tone5"
+                    value="st5"
+                  />
+                  <label for="style-tone5"
+                    ><span class="label-text">{{ labels.tone["st5"] }}</span
+                    ><span class="label-tick"></span
+                  ></label>
+                </div>
+                <div class="col-6 pt-2">
+                  <input
+                    type="radio"
+                    name="styleLength"
+                    formControlName="styleLength"
+                    id="style-length1"
+                    value="sl1"
+                  />
+                  <label for="style-length1">
+                    <span class="label-text">{{ labels.length["sl1"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleLength"
+                    formControlName="styleLength"
+                    id="style-length2"
+                    value="sl2"
+                  />
+                  <label for="style-length2">
+                    <span class="label-text">{{ labels.length["sl2"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleLength"
+                    formControlName="styleLength"
+                    id="style-length3"
+                    value="sl3"
+                  />
+                  <label for="style-length3">
+                    <span class="label-text">{{ labels.length["sl3"] }}y</span>
+                    <span class="label-tick"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="styles-wrapper">
+            <div class="styles">
+              <div class="row text-center">
+                <div class="col-6 pt-2">
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose1"
+                    value="sp1"
+                  />
+                  <label for="style-purpose1">
+                    <span class="label-text">{{ labels.purpose["sp1"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose2"
+                    value="sp2"
+                  />
+                  <label for="style-purpose2">
+                    <span class="label-text">{{ labels.purpose["sp2"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose3"
+                    value="sp3"
+                  />
+                  <label for="style-purpose3">
+                    <span class="label-text">{{ labels.purpose["sp3"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose4"
+                    value="sp4"
+                  />
+                  <label for="style-purpose4">
+                    <span class="label-text">{{ labels.purpose["sp4"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose5"
+                    value="sp5"
+                  />
+                  <label for="style-purpose5">
+                    <span class="label-text">{{ labels.purpose["sp5"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="stylePurpose"
+                    formControlName="stylePurpose"
+                    id="style-purpose6"
+                    value="sp6"
+                  />
+                  <label for="style-purpose6">
+                    <span class="label-text">{{ labels.purpose["sp6"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+                </div>
+                <div class="col-6 pt-2">
+                  <input
+                    type="radio"
+                    name="styleIndustry"
+                    formControlName="styleIndustry"
+                    id="style-industry1"
+                    value="si1"
+                  />
+                  <label for="style-industry1">
+                    <span class="label-text">{{ labels.industry["si1"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleIndustry"
+                    formControlName="styleIndustry"
+                    id="style-industry2"
+                    value="si2"
+                  />
+                  <label for="style-industry2">
+                    <span class="label-text">{{ labels.industry["si2"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleIndustry"
+                    formControlName="styleIndustry"
+                    id="style-industry3"
+                    value="si3"
+                  />
+                  <label for="style-industry3">
+                    <span class="label-text">{{ labels.industry["si3"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleIndustry"
+                    formControlName="styleIndustry"
+                    id="style-industry4"
+                    value="si4"
+                  />
+                  <label for="style-industry4">
+                    <span class="label-text">{{ labels.industry["si4"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+
+                  <input
+                    type="radio"
+                    name="styleIndustry"
+                    formControlName="styleIndustry"
+                    id="style-industry5"
+                    value="si5"
+                  />
+                  <label for="style-industry5">
+                    <span class="label-text">{{ labels.industry["si5"] }}</span>
+                    <span class="label-tick"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-floating">
+          <button type="submit" class="btn submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-send"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+              />
+            </svg>
+          </button>
+          <textarea
+            class="form-control border-secondary"
+            placeholder="Leave a comment here"
+            id="floatingTextarea"
+            formControlName="userQuery"
+          ></textarea>
+          <label for="floatingTextarea text-wrap"
+            >Napisz o jakiego maila Ci chodzi, do kogo go chcesz skierować, np:
+            "mail zaproszenie, spotkanie biznesowe, prezentacja nowych produktów
+            inwestycyjnych".</label
+          >
+        </div>
+      </form>
+      <div class="response">
+        @if (isLoading()) {
+        <div class="row">
+          <div class="col-12 mt-3 mb-2">
+            <app-status-message
+              [loop]="false"
+              [messages]="loadingMessages"
+              [interval]="3500"
+            >
+            </app-status-message>
+          </div>
+          <div class="col-12 mt-3">
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="placeholder-glow">
+              <span
+                class="placeholder col-12 placeholder-lg bg-secondary"
+              ></span>
+            </p>
+          </div>
+        </div>
+        } @else if (responseData()) {
+        <h6>Parametry feedbacku</h6>
+        <div class="feedback-info">
+          <ul class="list-group list-group-flush responsive-w75">
+            <li class="list-group-item">
+              <span>Ton komunikacji w mailu:</span
+              ><span>{{ choosenStyle()!.tone }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Długość i szczegółowość maila:</span
+              ><span>{{ choosenStyle()!.length }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Cel biznesowy</span
+              ><span>{{ choosenStyle()!.purpose }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Kontekst biznesowy:</span
+              ><span>{{ choosenStyle()!.industry }}</span>
+            </li>
+            <li class="list-group-item">
+              <span>Opis maila: </span><span>{{ userRequest()! }}</span>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="feedback-content-header-wrapper d-flex justify-content-between align-items-center w-75 mt-3"
+        >
+          <h6>Propozycja maila</h6>
+          @if (!copied()) {
+          <svg
+            (click)="copyToClipboard()"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-copy"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+            />
+          </svg>
+          } @else {
+          <div>
+            <span class="me-1 copied">skopiowane</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-check2"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"
+              />
+            </svg>
+          </div>
+          }
+        </div>
+
+        <div class="col-12 mt-3 p-2 feedback-content bg-light">
+          <div class="mb-2">Tytuł maila: {{ responseData()!.email_title }}</div>
+          <markdown [data]="responseData()?.output_MD"></markdown>
+        </div>
+        }
+      </div>
+    </main>
+  </div>
+</div>

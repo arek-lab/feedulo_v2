@@ -1,0 +1,104 @@
+main {
+  min-height: calc(100vh - 50px);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+label {
+  font-size: 0.8rem;
+}
+textarea {
+  height: 6rem !important;
+}
+.submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.submit svg {
+  height: 1.2rem;
+  width: 1.2rem;
+  fill: #606060;
+}
+.submit {
+  border: none;
+  transition: all 0.3s;
+}
+.submit:hover svg {
+  fill: #0d6efd;
+}
+.submit:active svg {
+  transform: scale(1.03);
+}
+input[type="radio"] {
+  display: none;
+  transition: all 0.3s;
+}
+span.label-tick {
+  display: inline-block;
+  width: 0.8rem;
+  margin-left: 0.1rem;
+}
+input[type="radio"]:checked + label span.label-tick::after {
+  content: " ✓";
+  color: #08cb00;
+  font-weight: bold;
+}
+form:has(textarea.ng-invalid) .submit {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.list-group-item {
+  font-size: 0.6rem;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.list-group-item:last-child span:first-child {
+  width: 10rem;
+}
+.list-group-item span:last-child {
+  font-weight: 400;
+  font-size: 0.65rem;
+}
+.responsive-w75 {
+  width: 75%;
+}
+@media (max-width: 550px) {
+  .responsive-w75 {
+    width: 100% !important;
+  }
+}
+.feedback-content {
+  font-size: 0.8rem;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+.hidden {
+  display: none;
+}
+.copied {
+  font-size: 0.6rem;
+  font-weight: 200;
+}
+.bi-copy {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.bi-copy:hover {
+  transform: scale(1.05);
+}
+.styles-wrapper {
+  margin: 0.3rem;
+  flex: 1;
+  min-width: 20rem;
+  height: 10rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+}

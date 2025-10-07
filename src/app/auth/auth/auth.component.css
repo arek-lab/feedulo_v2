@@ -1,0 +1,34 @@
+@media (min-width: 769px) {
+  .gradient-custom-2 {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+.fixed-height {
+  min-height: calc(100vh);
+}
+.back-home {
+  position: absolute;
+  cursor: pointer;
+}
+.back-home svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.back-home::after {
+  content: "←";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0.6rem;
+}
+.reset {
+  pointer-events: none;
+  cursor: default;
+}
+.alert-wrapper {
+  min-height: 3.8rem;
+}
